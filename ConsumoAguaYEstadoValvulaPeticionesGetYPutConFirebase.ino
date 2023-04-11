@@ -17,7 +17,7 @@ float volume = 0;
 long t0 = 0;
 
 const char* firebase_host = "consumodeaguapi-default-rtdb.firebaseio.com";
-const char* firebase_path = "/Consumodeagua/SensordeFlujo.json";
+const char* firebase_path = "/Consumodeagua/SensordeFlujo/1.json";
 
 void ISRCountPulse()
 {
@@ -100,7 +100,7 @@ http.end();
 
 void modifyFlowSensor(float flowValue) {
   HTTPClient http;
-  String endpoint = "https://consumodeaguapi-default-rtdb.firebaseio.com/Consumodeagua/SensordeFlujo.json";
+  String endpoint = "https://consumodeaguapi-default-rtdb.firebaseio.com/Consumodeagua/SensordeFlujo/1.json";
   String payload = "{\"flujo\": " + String(flowValue) + "}";
 
   http.begin(endpoint);
